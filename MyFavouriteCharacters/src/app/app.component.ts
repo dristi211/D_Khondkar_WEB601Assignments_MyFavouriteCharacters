@@ -1,5 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ContentCardComponent } from './content-card/content-card.component';
+import { Content } from './helper-files/content-interface';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +12,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'MyFavouriteCharacters';
+  title = 'D_Khondkar_MyFavouriteCharacters';
 }
+
+
+
