@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { ContentList } from '../helper-files/content-list';
 
