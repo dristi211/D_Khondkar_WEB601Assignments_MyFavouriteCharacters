@@ -20,7 +20,7 @@ constructor()
     id: 1,
     title: 'new title',
     description: 'This is the body of the content',
-    imgURL: "C:\Users\drist\Desktop\Winter_2024\Web_601_Javascript\sherlock1.jpg",
+    imgURL: "https://www.gettyimages.ca/photos/alex-trebek-jeopardy",
     creator: '',
     type:'',
     tags: []
@@ -31,7 +31,7 @@ constructor()
     id: 2,
     title: 'new title',
     description: 'This is the body of the content',
-    imgURL: '',
+    imgURL: 'https://www.gettyimages.ca/photos/alex-trebek-jeopardy',
     creator: '',
     type:'',
     tags: []
@@ -41,7 +41,7 @@ constructor()
     id: 3,
     title: 'new title',
     description: 'This is the body of the content',
-    imgURL: '',
+    imgURL: 'https://media.istockphoto.com/id/1316145932/photo/table-top-view-of-spicy-food.jpg?s=1024x1024&w=is&k=20&c=VaRsD5pHXDCMcwcAsOGaaBadptx0nHaJUuVKpyWaq3A=',
     creator: '',
     type:'',
     tags: []
