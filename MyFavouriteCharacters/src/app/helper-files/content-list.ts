@@ -18,7 +18,7 @@ export class ContentList{
 
           getContentHTML(i:number):string{
             let item:Content = this.a[i];
-            return'<p>' + item.description + '</p>' + item.id + '<img url="' + item.imgURL + '"></img>'
+            return'<p>' + item.title + item.description + item.type + '</p>' + item.id + item.creator +  '<img url="' + item.imgURL + '"></img>'
           }
 
     }
