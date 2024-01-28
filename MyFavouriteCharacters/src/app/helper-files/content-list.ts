@@ -2,22 +2,25 @@ import { Content } from './content-interface';
 
 
 export class ContentList{
-   private a:Content[]
+getContentDetails(_t6: any) {
+throw new Error('Method not implemented.');
+}
+   private contentArray:Content[]
 
     
    constructor() {
-        this.a=[];
+        this.contentArray=[];
    }       
      get getContentArray() {
-           return this.a
+           return this.contentArray
           }
         
           addItem(i:Content){
-            this.a.push(i);
+            this.contentArray.push(i);
           }
 
           getContentHTML(i:number):string{
-            let item:Content = this.a[i];
+            let item:Content = this.contentArray[i];
             return'<p>' + item.title + item.description + item.type + '</p>' + item.id + item.creator +  '<img url="' + item.imgURL + '"></img>'
           }
 

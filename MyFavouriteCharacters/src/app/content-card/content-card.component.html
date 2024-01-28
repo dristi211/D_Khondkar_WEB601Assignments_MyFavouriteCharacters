@@ -1,3 +1,7 @@
 <span class="body" [innerHTML]="contentList.getContentHTML(0)"></span>
 <span class="body">{{ contentList.getContentHTML(1) }}</span>
 <span class="body">{{ contentList.getContentHTML(2) }}</span>
+
+<!-- <div *ngFor="let item of contentList.content; let i = index">
+  <div [innerHTML]="contentList.getContentDetails(i)"></div>
+</div> -->

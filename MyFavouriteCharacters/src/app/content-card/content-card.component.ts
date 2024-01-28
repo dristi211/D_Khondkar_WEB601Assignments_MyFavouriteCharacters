@@ -12,7 +12,7 @@ import { ContentList } from '../helper-files/content-list';
 
 export class ContentCardComponent implements OnInit {
 
-contentList: ContentList;
+contentList: ContentList = new ContentList();
 
 constructor()
 {
@@ -48,7 +48,7 @@ constructor()
     tags: []
   });
 }
-ngOnInit() {
+ngOnInit(): void {
   
 }
 }
