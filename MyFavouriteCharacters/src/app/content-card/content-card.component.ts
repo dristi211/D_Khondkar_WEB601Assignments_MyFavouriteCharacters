@@ -9,6 +9,7 @@ import { ContentList } from '../helper-files/content-list';
   templateUrl: './content-card.component.html',
   styleUrl: './content-card.component.scss'
 })
+
 export class ContentCardComponent implements OnInit {
 
 contentList: ContentList;
@@ -21,7 +22,7 @@ constructor()
     title: 'new title',
     description: 'This is the body of the content',
     imgURL: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.podbean.com%2Fpodcast-detail%2Fpq68z-34268%2FThe-Adventures-of-Sherlock-Holmes-by-Sir-Arthur-Conan-Doyle-Podcast&psig=AOvVaw1N9iBovAnJhao2Ox1mjBPo&ust=1706479298642000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMiivPfI_oMDFQAAAAAdAAAAABAJ'    ",
-    creator: 'arthur conan doyle',
+    creator: 'Arthur Conan Doyle',
     type:'',
     tags: []
   });
