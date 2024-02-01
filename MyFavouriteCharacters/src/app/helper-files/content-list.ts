@@ -21,7 +21,7 @@ throw new Error('Method not implemented.');
 
           getContentHTML(i:number):string{
             let item:Content = this.contentArray[i];
-            return'<p>' + item.title + item.description + item.type + '</p>' + item.id + item.creator +  '<img url="' + item.imgURL + '"></img>'
+            return'<p>' + item.title + item.description + item.type + '</p>' + item.id + item.creator +  '<img src="' + item.imgURL + '"></img>'
           }
 
     }

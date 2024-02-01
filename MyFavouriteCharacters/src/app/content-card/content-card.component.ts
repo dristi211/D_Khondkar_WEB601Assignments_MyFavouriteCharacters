@@ -42,7 +42,7 @@ constructor()
     id: 3,
     title: 'Sherlok Holms',
     description: 'A brilliant London-based detective, Holmes is famous for his prowess at using logic and astute observation to solve cases.',
-    imgURL:'"C:\Users\drist\Pictures\Saved Pictures\bear.png"',
+    imgURL:'\Users\drist\Pictures\Saved Pictures\bear.png',
     creator: 'Arthur Conan Doyle',
     type:'',
     tags: []
