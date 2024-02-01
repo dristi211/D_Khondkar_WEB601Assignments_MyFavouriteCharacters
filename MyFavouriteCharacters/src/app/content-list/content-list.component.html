@@ -1,0 +1,14 @@
+<p>content-list works!</p>
+
+<div
+  *ngFor="let content of contentArray; let first = first"
+  class="content-card"
+  (click)="displayContentDetails(content)"
+>
+  <h3>{{ content.title }}</h3>
+  <h3>{{ content.title }}</h3>
+  <h3>{{ content.description }}</h3>
+  <h3>{{ content.description }}</h3>
+  <h3>{{ content.imageURL }}</h3>
+  <h3>{{ content.creator }}</h3>
+</div>
