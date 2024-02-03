@@ -1,7 +1,35 @@
-<span class="body" [innerHTML]="contentList.getContentHTML(0)"></span>
-<span class="body">{{ contentList.getContentHTML(1) }}</span>
-<span class="body">{{ contentList.getContentHTML(2) }}</span>
+<div
+  class="content-card"
+  (click)="onClick()"
+  [style.border]="isFirst ? '2px solid black' : '1px solid black'"
+>
+  <header>{{ title }}</header>
+  <img *ngIf="image" [src]="image" alt="Content Image" />
+  <p *ngIf="description">{{ description }}</p>
+  <p *ngIf="creator">{{ creator }}</p>
+  <p *ngIf="type">{{ type }}</p>
+  <div *ngIf="tags.length > 0">
+    <p>Tags:</p>
+    <ul>
+      <li *ngFor="let tag of tags">{{ tag }}</li>
+    </ul>
+  </div>
+</div>
 
-<!-- <div *ngFor="let item of contentList.content; let i = index">
-  <div [innerHTML]="contentList.getContentDetails(i)"></div>
-</div> -->
+<div
+  class="content-card"
+  (click)="onClick()"
+  [style.border]="isFirst ? '2px solid black' : '1px solid black'"
+>
+  <header>{{ title }}</header>
+  <img *ngIf="image" [src]="image" alt="Content Image" />
+  <p *ngIf="description">{{ description }}</p>
+  <p *ngIf="creator">{{ creator }}</p>
+  <p *ngIf="type">{{ type }}</p>
+  <div *ngIf="tags.length > 0">
+    <p>Tags:</p>
+    <ul>
+      <li *ngFor="let tag of tags">{{ tag }}</li>
+    </ul>
+  </div>
+</div>

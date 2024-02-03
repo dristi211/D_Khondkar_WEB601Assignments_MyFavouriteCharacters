@@ -1,14 +1,15 @@
 <p>content-list works!</p>
-
-<div
-  *ngFor="let content of contentArray; let first = first"
-  class="content-card"
-  (click)="displayContentDetails(content)"
->
-  <h3>{{ content.title }}</h3>
-  <h3>{{ content.title }}</h3>
-  <h3>{{ content.description }}</h3>
-  <h3>{{ content.description }}</h3>
-  <h3>{{ content.imageURL }}</h3>
-  <h3>{{ content.creator }}</h3>
+<div *ngFor="let content of contentItems; let first = first; let i = index">
+  <div class="content-card" (click)="(['displayContentDetails'])">
+    <img *ngIf="content.image" [src]="content.image" alt="Content Image" />
+    <div>
+      <h2>{{ content.title }}</h2>
+      <p *ngIf="content.description">{{ content.description }}</p>
+      <p *ngIf="content.creator">Creator: {{ content.creator }}</p>
+      <p *ngIf="content.type">Type: {{ content.type }}</p>
+      <p *ngIf="content.tags && content.tags.length">
+        Tags: {{ content.tags.join(", ") }}
+      </p>
+    </div>
+  </div>
 </div>

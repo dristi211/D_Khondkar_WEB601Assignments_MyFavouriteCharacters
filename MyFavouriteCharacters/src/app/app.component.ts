@@ -1,17 +1,21 @@
-//import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ContentCardComponent } from "./content-card/content-card.component";
-//import { ContentCardComponent } from './content-card/content-card.component';
-//import { Content } from './helper-files/content-interface';
+import { Content } from './helper-files/content-interface';
+import { ContentCardComponent } from './content-card/content-card.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, ContentCardComponent]
+    //imports: [RouterOutlet, ContentCardComponent]
 })
+  
+
+  
+
 export class AppComponent {
   title = 'D_Khondkar_MyFavouriteCharacters_Sherlok Holmes';
   id =1;
