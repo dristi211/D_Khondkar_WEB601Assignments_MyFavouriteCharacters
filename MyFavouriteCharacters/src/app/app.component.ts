@@ -6,15 +6,12 @@ import { Content } from './helper-files/content-interface';
 import { ContentCardComponent } from './content-card/content-card.component';
 
 @Component({
-    selector: 'app-root',
+    selector: 'app-content-list',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     //imports: [RouterOutlet, ContentCardComponent]
 })
-  
-
-  
 
 export class AppComponent {
   title = 'D_Khondkar_MyFavouriteCharacters_Sherlok Holmes';

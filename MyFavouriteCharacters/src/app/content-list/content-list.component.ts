@@ -9,7 +9,7 @@ import { ContentCardComponent } from '../content-card/content-card.component';
   styleUrls: ['./content-list.component.css']
 })
 export class ContentListComponent {
-  
+
   contentItems = [
     { id: 1, title: 'Content 1', image: 'image1.jpg', description: 'Description 1', creator: 'Creator 1', type: 'Type 1', tags: ['Tag1', 'Tag2'] },
     // Add more content items as needed
