@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { Content } from '../helper-files/content-interface';;
 import { ContentCardComponent } from '../content-card/content-card.component';
 
 
@@ -10,9 +10,12 @@ import { ContentCardComponent } from '../content-card/content-card.component';
 })
 export class ContentListComponent {
 
-  contentItems = [
-    { id: 1, title: 'Content 1', image: 'image1.jpg', description: 'Description 1', creator: 'Creator 1', type: 'Type 1', tags: ['Tag1', 'Tag2'] },
-    // Add more content items as needed
+  contents: Content[] = [
+    { id: 1, title: 'Title 1', year:1968, ISBN: 12.4500, description: '' , creator: '', type: 'type1', imgURL:'', tags:[] },
+    { id: 2, title: 'Title 2',  year:1968, ISBN: 12.45, description: '' , creator: '', type: 'type2', imgURL:'', tags:[] },
+    { id: 3, title: 'Title 3', year:1968, ISBN: 12.45, description: '' , creator: '', type: 'type3', imgURL:'', tags:[] },
+    { id: 4, title: 'Title 4', year:1968, ISBN: 12.45, description: '' , creator: '', type: 'type3', imgURL:'', tags:[] },
+   
   ];
 
   onImageClick(content: any) {
