@@ -1,5 +1,5 @@
 <p>content-list works!</p>
-<div *ngFor="let content of contentItems; let first = first; let i = index">
+<!-- <div *ngFor="let content of contentItems; let first = first; let i = index">
   <div class="content-card" (click)="(['displayContentDetails'])">
     <img *ngIf="content.image" [src]="content.image" alt="Content Image" />
     <div>
@@ -10,6 +10,28 @@
       <p *ngIf="content.tags && content.tags.length">
         Tags: {{ content.tags.join(", ") }}
       </p>
+    </div>
+  </div>
+</div> -->
+<ng-container>
+  type="text" [(ngModel)]="searchTitle" placeholder="Enter title" />
+  <button (click)="searchContent()">Search</button>
+  [ngStyle]="{ color: searchResult ? 'green' : 'red' }">
+  {{ searchResult ? "Content exists" : "Content not found" }}
+</ng-container>
+<div *ngFor="let content of contents | contentTypeFilter : null">
+  <div
+    [ngClass]="{ highlighted: highlightedContentIndex === i }"
+    *ngFor="let content of contents; let i = index"
+  >
+    <div
+      class="content-card"
+      [ngClass]="{
+        type1: content.type === 'type1',
+        type2: content.type === 'type2'
+      }"
+    >
+      {{ content.title }}
     </div>
   </div>
 </div>

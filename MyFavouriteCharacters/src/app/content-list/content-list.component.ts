@@ -17,11 +17,23 @@ export class ContentListComponent {
     { id: 4, title: 'Title 4', year:1968, ISBN: 12.45, description: '' , creator: '', type: 'type3', imgURL:'', tags:[] },
    
   ];
+  searchTitle: string = '';
+  searchResult: boolean | null = null;
+  highlightedContentIndex: number | null = null;
 
-  onImageClick(content: any) {
-    console.log(`Clicked on Content - ID: ${content.id}, Title: ${content.title}`);
+  searchContent() {
+    this.searchResult = this.contents.some(content => content.title === this.searchTitle);
+    if (this.searchResult) {
+      this.highlightedContentIndex = this.contents.findIndex(content => content.title === this.searchTitle);
+    } else {
+      this.highlightedContentIndex = null;
+    }
   }
 }
+//   onImageClick(content: any) {
+//     console.log(`Clicked on Content - ID: ${content.id}, Title: ${content.title}`);
+//   }
+// }
 
 
 // @Component({

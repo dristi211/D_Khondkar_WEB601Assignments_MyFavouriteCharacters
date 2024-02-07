@@ -4,6 +4,7 @@
   [style.border]="isFirst ? '2px solid black' : '1px solid black'"
 >
   <header>{{ title }}</header>
+  <p>{{ description }}</p>
   <img *ngIf="image" [src]="image" alt="Content Image" />
   <p *ngIf="description">{{ description }}</p>
   <p *ngIf="creator">{{ creator }}</p>

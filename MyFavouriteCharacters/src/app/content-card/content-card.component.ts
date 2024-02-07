@@ -7,9 +7,9 @@ import { NgClass } from '@angular/common';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent {
-  @Input() title: string = '';
+  @Input() title: string = 'MyFavouriteCharcters';
   @Input() image: string = '';
-  @Input() description: string = '';
+  @Input() description: string = 'This is a detective series';
   @Input() creator: string = '';
   @Input() type: string = '';
   @Input() tags: string[] = [];
