@@ -1,25 +1,32 @@
 import { Component } from '@angular/core';
-import { Content } from '../helper-files/content-interface';;
+import { Content } from '../helper-files/content-interface';
 import { ContentCardComponent } from '../content-card/content-card.component';
-
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import {ContentTypeFilterPipePipe} from '../content-type-filter-pipe.pipe'
 
 @Component({
   selector: 'app-content-list',
+  standalone: true,
+  imports: [CommonModule, ContentCardComponent, RouterOutlet, ContentTypeFilterPipePipe],
   templateUrl: './content-list.component.html',
-  styleUrls: ['./content-list.component.css']
+  styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent {
+[x: string]: any;
 
   contents: Content[] = [
-    { id: 1, title: 'Title 1', year:1968, ISBN: 12.4500, description: '' , creator: '', type: 'type1', imgURL:'', tags:[] },
-    { id: 2, title: 'Title 2',  year:1968, ISBN: 12.45, description: '' , creator: '', type: 'type2', imgURL:'', tags:[] },
-    { id: 3, title: 'Title 3', year:1968, ISBN: 12.45, description: '' , creator: '', type: 'type3', imgURL:'', tags:[] },
-    { id: 4, title: 'Title 4', year:1968, ISBN: 12.45, description: '' , creator: '', type: 'type3', imgURL:'', tags:[] },
+    { id: 1, title: 'The Hound of the Baskervilles', year:1902, ISBN: 12.4500, description: 'In this, one of the most famous of Doyles mysteries, the tale of an ancient curse and a savage ghostly hound comes frighteningly to life. ' , creator: 'Arthur Conan Doyle', type: 'detective fiction', image:'',tags:[] },
+    { id: 2, title: 'His Last Bow',  year:1917, ISBN: 12.45, description: 'Holmes disguises himself as an informant against the British. He meets up with a German agent to provide some top-secret information, but overtakes him with chloroform. I' , creator: 'Arthur Conan Doyle', type: 'detective fiction', image:'', tags:[] },
+    { id: 3, title: 'The Valley of Fear', year:1915, ISBN: 12.45, description: 'The Valley of Fear is a story about a mysterious murder in Birlstone, beautiful countryside in England' , creator: 'Arthur Conan Doyle', type: 'detective fiction', image:'', tags:[] },
+    { id: 4, title: 'The Sign of the Four', year:1890, ISBN: 12.45, description: 'The Sign of the Four is the second novel by Arthur Conan Doyle about master detective Sherlock Holmes and his partner Dr John Watson' , creator: 'Arthur Conan Doyle', type: 'detective fiction', image:'', tags:[] },
    
   ];
   searchTitle: string = '';
   searchResult: boolean | null = null;
   highlightedContentIndex: number | null = null;
+string: string | undefined;
+contentItems: any;
 
   searchContent() {
     this.searchResult = this.contents.some(content => content.title === this.searchTitle);

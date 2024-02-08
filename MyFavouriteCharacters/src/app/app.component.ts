@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
-//import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Content } from './helper-files/content-interface';
-import { ContentCardComponent } from './content-card/content-card.component';
+import { ContentListComponent } from './content-list/content-list.component';
 
 @Component({
-    selector: 'app-content-list',
+    selector: 'app-root',
     standalone: true,
+    imports: [CommonModule, ContentListComponent, RouterOutlet],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     //imports: [RouterOutlet, ContentCardComponent]

@@ -1,5 +1,5 @@
 <p>content-list works!</p>
-<!-- <div *ngFor="let content of contentItems; let first = first; let i = index">
+<div *ngFor="let content of contents; let first = first; let i = index">
   <div class="content-card" (click)="(['displayContentDetails'])">
     <img *ngIf="content.image" [src]="content.image" alt="Content Image" />
     <div>
@@ -12,14 +12,14 @@
       </p>
     </div>
   </div>
-</div> -->
-<ng-container>
+</div>
+<!-- <div>
   type="text" [(ngModel)]="searchTitle" placeholder="Enter title" />
   <button (click)="searchContent()">Search</button>
-  [ngStyle]="{ color: searchResult ? 'green' : 'red' }">
+  [ngStyle]="color: searchResult ? 'green' : 'red' ">
   {{ searchResult ? "Content exists" : "Content not found" }}
-</ng-container>
-<div *ngFor="let content of contents | contentTypeFilter : null">
+</div> -->
+<div *ngFor="let content of contents | contentTypeFilterPipe : 'type'">
   <div
     [ngClass]="{ highlighted: highlightedContentIndex === i }"
     *ngFor="let content of contents; let i = index"

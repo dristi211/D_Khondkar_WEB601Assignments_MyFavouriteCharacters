@@ -1,8 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { NgClass, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-content-card',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './content-card.component.html',
   styleUrls: ['./content-card.component.scss']
 })

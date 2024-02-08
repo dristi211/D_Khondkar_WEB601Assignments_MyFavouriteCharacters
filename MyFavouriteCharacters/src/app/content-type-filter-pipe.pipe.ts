@@ -5,11 +5,7 @@ import { Content } from './helper-files/content-interface';
   standalone: true
 })
 
-@Pipe({ name: 'contentTypeFilter' })
 export class ContentTypeFilterPipePipe implements PipeTransform {
-// transform(content: Content, dType: string ): string {
-// return content.type || dType || "News";
-// }
 transform(contents: Content[], type: string): Content[] {
   if (!type) {
     return contents.filter(content => !content.type);
