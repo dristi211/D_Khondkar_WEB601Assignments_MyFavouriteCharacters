@@ -1,7 +1,13 @@
 <p>content-list works!</p>
 <div *ngFor="let content of contents; let first = first; let i = index">
+  <h2>{{ content.title }}</h2>
+
   <div class="content-card" (click)="(['displayContentDetails'])">
-    <img *ngIf="content.image" [src]="content.image" alt="Content Image" />
+    <img
+      *ngIf="content.imageUrl"
+      [src]="content.imageUrl"
+      alt="Content Image"
+    />
     <div>
       <h2>{{ content.title }}</h2>
       <p *ngIf="content.description">{{ content.description }}</p>
@@ -13,12 +19,7 @@
     </div>
   </div>
 </div>
-<!-- <div>
-  type="text" [(ngModel)]="searchTitle" placeholder="Enter title" />
-  <button (click)="searchContent()">Search</button>
-  [ngStyle]="color: searchResult ? 'green' : 'red' ">
-  {{ searchResult ? "Content exists" : "Content not found" }}
-</div> -->
+
 <div *ngFor="let content of contents | contentTypeFilterPipe : 'type'">
   <div
     [ngClass]="{ highlighted: highlightedContentIndex === i }"
@@ -27,11 +28,12 @@
     <div
       class="content-card"
       [ngClass]="{
-        type1: content.type === 'type1',
-        type2: content.type === 'type2'
+        type1: content.title === 'green-text',
+        type2: content.type === 'red-text'
       }"
     >
       {{ content.title }}
+      {{ content.creator }}
     </div>
   </div>
 </div>

@@ -1,0 +1,10 @@
+<button type="button" (click)="onClickMe()">Click me!</button>
+<div *ngFor="let type of types">
+  <h2>{{ type }}</h2>
+  <div *ngFor="let content of contents | contentFilter:type">
+    <div
+      class="content-card"
+      [ngClass]="{'green': type === 'Type1', 'red': type === 'Type2'}"
+    ></div>
+  </div>
+</div>

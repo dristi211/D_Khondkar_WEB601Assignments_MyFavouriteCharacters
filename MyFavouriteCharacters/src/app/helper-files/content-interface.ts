@@ -6,7 +6,7 @@ export  interface Content {
     title: string;
     description: string;
     creator: string;
-    image?: string;
+    imageUrl?: string;
     type?: string;
     tags?: string[];
   }
