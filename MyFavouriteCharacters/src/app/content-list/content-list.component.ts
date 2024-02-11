@@ -3,7 +3,9 @@ import { Content } from '../helper-files/content-interface';
 import { ContentCardComponent } from '../content-card/content-card.component';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {ContentTypeFilterPipePipe} from '../content-type-filter-pipe.pipe'
+import {ContentTypeFilterPipePipe} from '../content-type-filter-pipe.pipe';
+
+
 
 @Component({
   selector: 'app-content-list',
