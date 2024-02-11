@@ -5,13 +5,15 @@ import { RouterOutlet } from '@angular/router';
 import { Content } from './helper-files/content-interface';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentTypeFilterPipePipe } from "./content-type-filter-pipe.pipe";
+import { ClickMeComponent } from "./content-list/click-me-component";
+import { SearchComponent } from "./search/search.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, ContentListComponent, RouterOutlet, ContentTypeFilterPipePipe]
+    imports: [CommonModule, ContentListComponent, RouterOutlet, ContentTypeFilterPipePipe, ClickMeComponent, SearchComponent]
 })
 
 export class AppComponent {

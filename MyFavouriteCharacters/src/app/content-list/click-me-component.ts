@@ -19,3 +19,10 @@ import { CommonModule } from '@angular/common';
     }
   }
   
+  export class KeyUpComponent_v1 {
+    values = '';
+  
+    onKey(event: any) { 
+      this.values += event.target.value + ' | ';
+    }
+  }

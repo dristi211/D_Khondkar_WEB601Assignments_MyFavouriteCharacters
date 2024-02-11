@@ -11,6 +11,10 @@
   <div class="content">
     <div class="left-side">
       <h1>Welcome to {{ title }}!</h1>
+      <div>
+        <app-search></app-search>
+      </div>
+
       <app-content-list></app-content-list>
       <div *ngFor="let type of type">
         <h2>{{ type }}</h2>
