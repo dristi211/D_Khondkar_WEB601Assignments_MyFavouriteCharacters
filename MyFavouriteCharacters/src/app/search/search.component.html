@@ -1,7 +1,19 @@
 <p>search works!</p>
-<input
+<!-- <input
   type="text"
   [(ngModel)]="searchQuery"
   (input)="search()"
   placeholder="Search here"
-/>
+/> -->
+<div class="input-group my-4">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Find the books name"
+    #filter
+    (keyup)="(filter.value)"
+  />
+  <button class="btn btn-light" type="button" (click)="(''); filter.value = ''">
+    Search
+  </button>
+</div>

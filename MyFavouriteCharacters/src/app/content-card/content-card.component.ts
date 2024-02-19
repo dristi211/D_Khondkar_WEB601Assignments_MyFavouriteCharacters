@@ -3,6 +3,8 @@ import { NgClass, CommonModule, NgComponentOutlet } from '@angular/common';
 import {ContentTypeFilterPipePipe} from '../content-type-filter-pipe.pipe'
 import { Content } from '../helper-files/content-interface';
 import { FormsModule } from '@angular/forms';
+import { NgModel, NgModelGroup } from '@angular/forms';
+
 @Component({
   selector: 'app-content-card',
   standalone: true,
@@ -21,7 +23,15 @@ export class ContentCardComponent {
 
   @Output() imageClick: EventEmitter<{ id: number, title: string }> = new EventEmitter();
 isFirst: any;
+constructor() { }
 
+search() {
+ 
+  this['searchResultExists'] = this['contents'].some((content: { title: any; }) => content.title === this['searchTitle']);
+  this['searchResultMessage'] = this['searchResultExists'] ? 'Content exists with the given title' : 'Content does not exist with the given title';
+
+  ;
+}
   onClick() {
     this.imageClick.emit({ id: 1, title: this.title });
   }
