@@ -11,34 +11,8 @@
   <div class="content">
     <div class="left-side">
       <h1>Welcome to {{ title }}!</h1>
-      <div>
-        <app-search></app-search>
-      </div>
-
+      <h1>{{ title }}</h1>
       <app-content-list></app-content-list>
-      <div *ngFor="let type of type">
-        <h2>{{ type }}</h2>
-
-        <div
-          class="content-card"
-          [ngClass]="{
-            green: type === 'fictional detective',
-            red: type === 'fictional detective2'
-          }"
-        ></div>
-      </div>
     </div>
-
-    <app-content-card [ngStyle]="{ padding: '5px' }">
-      <app-content-list-header [ngStyle]="{ 'background-color': 'green' }">
-        <app-content-list [ngStyle]="{ 'font-size': '16px', color: 'blue' }"
-          >Title</app-content-list
-        >
-        <app-content-list-subtitle
-          [ngStyle]="{ 'font-size': '12px', color: 'blue' }"
-          >Subtitle</app-content-list-subtitle
-        >
-      </app-content-list-header>
-    </app-content-card>
   </div>
 </main>

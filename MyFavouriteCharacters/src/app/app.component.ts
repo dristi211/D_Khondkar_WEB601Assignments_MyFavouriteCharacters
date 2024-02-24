@@ -7,17 +7,20 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { ContentTypeFilterPipePipe } from "./content-type-filter-pipe.pipe";
 import { ClickMeComponent } from "./content-list/click-me-component";
 import { SearchComponent } from "./search/search.component";
+import { ContentCardComponent } from "./content-card/content-card.component";
+import { filter } from 'rxjs';
 
 @Component({
     selector: 'app-root',
     standalone: true,
+    imports: [CommonModule, ContentListComponent, RouterOutlet, ContentTypeFilterPipePipe, ClickMeComponent, SearchComponent, ContentCardComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [CommonModule, ContentListComponent, RouterOutlet, ContentTypeFilterPipePipe, ClickMeComponent, SearchComponent]
+    
 })
 
 export class AppComponent {
-[x: string]: any;
+//[x: string]: any;
   title = 'D_Khondkar_MyFavouriteCharacters_Sherlok Holmes';
   id =1;
   description = 'Sherlock Holmes is a fictional detective of the late 19th and early 20th centuries, who first appeared in publication in 1887. He was devised by British author and physician Sir Arthur Conan Doyle';
@@ -27,6 +30,5 @@ export class AppComponent {
 onClickMe: any;
 
 }
-
 
 

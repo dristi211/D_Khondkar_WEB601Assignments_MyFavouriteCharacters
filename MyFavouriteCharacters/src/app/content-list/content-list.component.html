@@ -1,38 +1,159 @@
-<div *ngFor="let content of contents; let first = first; let i = index">
-  <h2>{{ content.title }}</h2>
-
-  <div class="content-card" (click)="(['displayContentDetails'])">
-    <img
-      *ngIf="content.imageUrl"
-      [src]="content.imageUrl"
-      alt="Content Image"
-    />
-    <div>
-      <h2>{{ content.title }}</h2>
-      <p *ngIf="content.description">{{ content.description }}</p>
-      <p *ngIf="content.creator">Creator: {{ content.creator }}</p>
-      <p *ngIf="content.type">Type: {{ content.type }}</p>
-      <p *ngIf="content.tags && content.tags.length">
-        Tags: {{ content.tags.join(", ") }}
-      </p>
-    </div>
-  </div>
+<div class="input">
+  <input type="text" name="title" [ngModel]="title" #searchT />
+  <button (click)="checkTitle()">Submit</button>
 </div>
 
-<div *ngFor="let content of contents | contentTypeFilterPipe : 'type'">
-  <div
-    [ngClass]="{ highlighted: highlightedContentIndex === i }"
-    *ngFor="let content of contents; let i = index"
+<p class="message" [style.color]="isFound ? 'green' : 'red'">
+  {{ message }}
+</p>
+
+<div class="inputButton input-group my-4">
+  <input
+    type="text"
+    name="title"
+    [ngModel]="searchTitle"
+    class="form-control"
+    placeholder="Find the books name"
+    #searchT
+  />
+
+  <button
+    class="btn btn-light"
+    type="button"
+    (click)="searchContent(searchT.value)"
   >
-    <div
-      class="content-card"
-      [ngClass]="{
-        type1: content.title === 'green-text',
-        type2: content.type === 'red-text'
-      }"
-    >
-      {{ content.title }}
-      {{ content.creator }}
+    Search
+  </button>
+</div>
+
+<div class="container">
+  <div class="card-none">
+    <h2>No Type</h2>
+    <app-content-card
+      *ngFor="let item of contentArray | contentTypeFilterPipe : ''"
+      [content]="item"
+    ></app-content-card>
+  </div>
+
+  <div class="card-fiction">
+    <h2>Fiction</h2>
+    <app-content-card
+      *ngFor="
+        let item of contentArray | contentTypeFilterPipe : 'detective fiction'
+      "
+      [content]="item"
+    ></app-content-card>
+  </div>
+  <div class="card-suspense">
+    <h2>Suspense</h2>
+
+    <app-content-card
+      *ngFor="
+        let item of contentArray | contentTypeFilterPipe : 'detective Suspense'
+      "
+      [content]="item"
+    ></app-content-card>
+  </div>
+
+  <div class="card-sus2">
+    <h2>Fiction2</h2>
+    <app-content-card
+      *ngFor="
+        let item of contentArray | contentTypeFilterPipe : 'detective Fiction2'
+      "
+      [content]="item"
+    ></app-content-card>
+  </div>
+  <div class="card-suspense">
+    <h2>Suspense</h2>
+
+    <app-content-card
+      *ngFor="
+        let item of contentArray | contentTypeFilterPipe : 'detective Suspense'
+      "
+      [content]="item"
+    ></app-content-card>
+  </div>
+  <!-- <div>
+    <app-content-card *ngFor="let item of contentArray.slice(0, 5)" [content]="item"></app-content-card>
+</div> 
+
+[ngClass]="{ 'card-Fantasy': true }"
+-->
+
+  <!-- <div
+        class="content-card"
+        [ngClass]="{
+          type1: content.title === 'green-text',
+          type2: content.type === 'red-text'
+        }"
+      >
+        {{ content.title }}
+        {{ content.creator }}
+      </div>
+    </div>
+  </div>
+  <div class="inputButton">
+    <input type="text" name="title" ,[(ngModel)]="titleCheck" />
+    <button (click)="titleCheck()">Submit</button>
+  </div> -->
+
+  <div class="container">
+    <div class="card-none">
+      <h2>No Type</h2>
+      <app-content-card
+        *ngFor="let item of contentArray | contentTypeFilterPipe : ''"
+        [content]="item"
+      ></app-content-card>
+    </div>
+    <app-content-card
+      *ngFor="let item of contentArray | contentTypeFilterPipe : 'books'"
+      [content]="item"
+    ></app-content-card>
+  </div>
+  <div class="content-list">
+    <div class="completeBooks">
+      <app-content-card
+        *ngFor="
+          let contentItem of contentArray | contentTypeFilterPipe : 'Suspense'
+        "
+        [content]="contentItem"
+      ></app-content-card>
+    </div>
+
+    <div class="books">
+      <app-content-card
+        *ngFor="
+          let contentItem of contentArray | contentTypeFilterPipe : 'Thriller'
+        "
+        [content]="contentItem"
+      ></app-content-card>
+    </div>
+
+    <div class="books">
+      <app-content-card
+        *ngFor="
+          let contentItem of contentArray | contentTypeFilterPipe : 'Mystery'
+        "
+        [content]="contentItem"
+      ></app-content-card>
+    </div>
+
+    <div class="books">
+      <app-content-card
+        *ngFor="
+          let contentItem of contentArray | contentTypeFilterPipe : 'Mystery'
+        "
+        [content]="contentItem"
+      ></app-content-card>
+    </div>
+
+    <div class="noTypes">
+      <h3>No Types</h3>
+      <app-content-card
+        *ngFor="let contentItem of contentArray | contentTypeFilterPipe : ''"
+        [content]="contentItem"
+      ></app-content-card>
     </div>
   </div>
 </div>

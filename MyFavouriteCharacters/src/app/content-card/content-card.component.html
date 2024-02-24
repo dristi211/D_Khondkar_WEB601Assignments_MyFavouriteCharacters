@@ -1,4 +1,4 @@
-<input
+<!-- <input
   type="text"
   [(ngModel)="searchQuery"
   (input)="search()"
@@ -20,23 +20,22 @@
     <button
       class="btn btn-light"
       type="button"
-      (click)="(''); filter.value = ''"
+      (click)="('title'); filter.value = 'title'"
     >
-      Clear
+      Find
     </button>
   </div>
   <header>{{ title }}</header>
   <p>{{ description }}</p>
-  <img *ngIf="image" [src]="image" alt="Content Image" />
+  <img *ngIf="imageUrl" [src]="imageUrl" alt="Content Image" />
   <p *ngIf="description">{{ description }}</p>
   <p *ngIf="creator">{{ creator }}</p>
-  <p *ngIf="type">{{ type }}</p>
-  <div *ngIf="tags.length > 0">
-    <p>Tags:</p>
-    <ul>
-      <li *ngFor="let tag of tags">{{ tag }}</li>
-    </ul>
-  </div>
+  <p *ngIf="type" appHoverAffect>{{ type }}</p>
+
+  <p>Tags:</p>
+  <ul>
+    <li *ngFor="let tag of tags">{{ tag }}</li>
+  </ul>
 </div>
 
 <div
@@ -45,14 +44,69 @@
   [style.border]="isFirst ? '2px solid red' : '1px solid blue'"
 >
   <header>{{ title }}</header>
-  <img *ngIf="image" [src]="image" alt="Content Image" />
+  <img *ngIf="imageUrl" [src]="imageUrl" alt="Content Image" />
   <p *ngIf="description">{{ description }}</p>
   <p *ngIf="creator">{{ creator }}</p>
   <p *ngIf="type">{{ type }}</p>
-  <div *ngIf="tags.length > 0">
-    <p>Tags:</p>
-    <ul>
-      <li *ngFor="let tag of tags">{{ tag }}</li>
-    </ul>
+</div>
+<p>Tags:</p>
+<ul>
+  <li *ngFor="let tag of tags">{{ tag }}</li>
+</ul>
+
+<div class="content-card">
+  <div *ngIf="imageUrl; else defaultImage">
+    <img [src]="imageUrl" alt="Image" class="card-image" />
+  </div>
+  <ng-template #defaultImage>
+    <img src="bird1.jpg" alt="Default Image" class="card-image" />
+  </ng-template>
+</div> -->
+<!-- <section *ngFor="let contentItem of contentList.getContentArray; let i = index">
+    <div [innerHTML]="contentList.outputHtmlContent(i)"></div>
+</section> -->
+<div
+  [style.border]="content.id === 1 ? '2px solid black' : '1px solid red'"
+  [style.padding]="'20px'"
+  [style.margin]="'10px'"
+>
+  <div class="card">
+    <header>{{ content.title }}</header>
+    <img
+      class="img"
+      *ngIf="content.imageUrl; else defaultImage"
+      [src]="content.imageUrl"
+      (click)="showDetails()"
+    />
+
+    <img [src]="content.imageUrl" (click)="showDetails()" />
+    <ng-template #defaultImage>
+      <img
+        class="default-img"
+        src="https://hips.hearstapps.com/hmg-prod/images/best-fall-movies-1659459329.jpg?crop=0.467xw:1.00xh;0.214xw,0&resize=1200:*"
+        (click)="showDetails()"
+      />
+    </ng-template>
+
+    <p>Description: {{ content.description }}</p>
+
+    <p>Creator: {{ content.creator }}</p>
+
+    <p>Type: {{ content.type }}</p>
+
+    <p appHoverAffect typeStyle="textDecoration">Type: {{ content.type }}</p>
+
+    <!-- <div *ngFor="let tag of content.tags">- {{ tag }}</div> -->
+    <div>
+      Tags:
+      <div
+        class="list"
+        *ngFor="let tag of content.tags"
+        appHoverAffect
+        tagStyle="fontWeight"
+      >
+        {{ tag }}
+      </div>
+    </div>
   </div>
 </div>
