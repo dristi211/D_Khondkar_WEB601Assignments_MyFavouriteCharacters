@@ -15,9 +15,6 @@ import {HoverAffectDirective} from '../hover-affect.directive'
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent {
-//[x: string]: TemplateRef<NgIfContext<string|undefined>>|null;
-
-
 
   @Input()
   content!: Content;

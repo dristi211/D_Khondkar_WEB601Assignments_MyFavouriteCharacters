@@ -1,17 +1,23 @@
 <div class="input">
-  <input type="text" name="title" [ngModel]="title" #searchT />
-  <button (click)="checkTitle()">Submit</button>
+  <input
+    type="text"
+    name="title"
+    [ngModel]="title"
+    #searchT
+    placeholder="Find the books name"
+  />
+  <button (click)="checkTitle()">Search</button>
 </div>
-
+<!-- <input type="text" ng-model="searchBox" /> -->
 <p class="message" [style.color]="isFound ? 'green' : 'red'">
   {{ message }}
 </p>
 
-<div class="inputButton input-group my-4">
+<!-- <div class="inputButton input-group my-4">
   <input
     type="text"
     name="title"
-    [ngModel]="searchTitle"
+    [ngModel]="searchT"
     class="form-control"
     placeholder="Find the books name"
     #searchT
@@ -20,11 +26,11 @@
   <button
     class="btn btn-light"
     type="button"
-    (click)="searchContent(searchT.value)"
+    (click)="searchContent(searchT.title)"
   >
     Search
   </button>
-</div>
+</div> -->
 
 <div class="container">
   <div class="card-none">
@@ -78,7 +84,7 @@
     <app-content-card *ngFor="let item of contentArray.slice(0, 5)" [content]="item"></app-content-card>
 </div> 
 
-[ngClass]="{ 'card-Fantasy': true }"
+[ngClass]="{ 'card-Fiction': true }"
 -->
 
   <!-- <div
