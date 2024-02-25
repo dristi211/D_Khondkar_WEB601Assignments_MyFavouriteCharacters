@@ -21,7 +21,7 @@ export class ContentCardComponent {
 
   @Input()
   content!: Content;
-//[x: string]: any;
+
 showDetails() {
   console.log(`id: $(this.content.id}, Title: ${this.content.title})`);
   console.log('Image clicked!');
