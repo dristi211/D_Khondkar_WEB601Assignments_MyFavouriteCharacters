@@ -163,3 +163,13 @@
     </div>
   </div>
 </div>
+
+<div>
+  <app-create-content (addContent)="addContent($event)"></app-create-content>
+  
+  <!-- Display existing contents using ngFor -->
+  <div *ngFor="let content of contents">
+    {{ content.title }}
+    <!-- Display other content fields -->
+  </div>
+</div>

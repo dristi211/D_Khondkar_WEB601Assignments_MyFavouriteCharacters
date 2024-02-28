@@ -6,16 +6,27 @@ import { RouterOutlet } from '@angular/router';
 import { ContentTypeFilterPipePipe } from '../content-type-filter-pipe.pipe';
 import { HoverAffectDirective } from '../hover-affect.directive'
 import { FormsModule } from '@angular/forms';
+import { createComponent } from '@angular/core';
+import { CreateContentComponent } from '../create-content/create-content.component';
 
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, RouterOutlet, ContentTypeFilterPipePipe, HoverAffectDirective, FormsModule],
+  imports: [CommonModule, ContentCardComponent, RouterOutlet, ContentTypeFilterPipePipe, HoverAffectDirective, FormsModule, CreateContentComponent],
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent {
+  contents: any[] = [];
+
+  addContent(content: any) {
+    // Here you can perform any necessary actions before adding the content to the list
+    this.contents.push({...content});
+    console.log('Content added successfully:', content.title);
+  }
+
+
 
 contentArray: Content[]  = [
     { id: 1, title: 'The Hound of the Baskervilles', year:1902, ISBN:12.4500, description:'In this, one of the most famous of Doyles mysteries, the tale of an ancient curse and a savage ghostly hound comes frighteningly to life. ' , creator: 'Arthur Conan Doyle', type:'detective fiction', imageUrl:'https://images.pexels.com/photos/1028225/pexels-photo-1028225.jpeg?auto=compress&cs=tinysrgb&w=600', tags:['Detective','Suspense','Thriller'] },
@@ -47,26 +58,8 @@ searchTitle: any;
   constructor(){
 
   }
-}
-/* // searchTitle: string='';
-// searchResult:Content []=[];
-// highlightedContentIndex: number | null = null;
-// string: string | any;
-// contentItems: string | undefined;
-// contents!: Content[];
-// titleCheck:any;
 
-//   searchContent(title:string) {
-//     this.searchResult = this.contentArray.filter((contentArray: { title: string; }) => contentArray.title === title);
-//     if (this.searchResult.length>0) {
-//       alert('found');
-//       this.highlightedContentIndex = this.contentArray.findIndex((contentArray: { title: string; }) => contentArray.title === title);
-//     } else {
-//       alert('not found');
-//       this.highlightedContentIndex = null;
-//     }
-//   }
-// } */
+}
  
 
 
