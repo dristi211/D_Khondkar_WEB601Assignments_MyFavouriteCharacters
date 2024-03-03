@@ -1,11 +1,12 @@
-<p>create-content works!</p>
-<!-- create-content.component.html -->
 
-<div>
-    <input type="text" [(ngModel)]="content.id" placeholder="ID">
-    <input type="text" [(ngModel)]="content.title" placeholder="Title">
-    <!-- Add other necessary input fields -->
-  
+  <input type="text" [(ngModel)]="content.id" placeholder="id"><br>
+    <input type="text" [(ngModel)]="content.title" placeholder="Title"><br>
+    <input type="text" [(ngModel)]="content.description" placeholder="Description"><br>
+    <input type="text" [(ngModel)]="content.creator" placeholder="Creator"><br>
+    <input type="text" [(ngModel)]="content.imageUrl" placeholder="Image imageUrl"><br>
+    <input type="text" [(ngModel)]="content.type" placeholder="Type"><br>
+    <input type="text" [(ngModel)]="tagInput" placeholder="Tags"><br>
+ 
     <button (click)="submitContent()">Submit</button>
-  </div>
-  
+   
+    <p *ngIf="errorMessage" style="color: red; font-weight: bold;">{{ errorMessage }}</p>
