@@ -23,6 +23,7 @@ export class ContentListComponent {
   addContent(content: any) {
     // Here you can perform any necessary actions before adding the content to the list
     this.contentArray.push(content);
+    //add the deep cloning object 
     let clonedArray = JSON.parse(JSON.stringify(this.contentArray))
     this.contentArray=clonedArray
 
