@@ -24,8 +24,10 @@ export class CreateContentComponent {
 
   
    submitContent(): Promise<string> {
+   //Creates a new instance (Promise)
      return new Promise((resolve, reject) =>{
     if (!this.isValidContent(this.content)) {
+       //If it is not valid: display error message
        this.errorMessage = 'Id, Title, Description, Creator fields are required';
        reject(this.errorMessage);
       } else {
@@ -38,12 +40,15 @@ export class CreateContentComponent {
      });
    }
 
+  //clears the fields/error message after emitting an event
    clearFields() {
      this.content = {} as Content;
      this.errorMessage = '';
      this.tagInput = '';
    }
 
+ // Validates the content, takes the 'Content' as a param & return a boolean
+ // Checks all the if all the required fields are present
    isValidContent(content: Content): boolean {
      return !!content.id && !!content.title && !!content.description && !!content.creator;
   }

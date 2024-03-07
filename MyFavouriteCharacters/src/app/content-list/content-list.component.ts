@@ -22,7 +22,10 @@ export class ContentListComponent {
 
   addContent(content: any) {
     // Here you can perform any necessary actions before adding the content to the list
-    this.contents.push({...content});
+    this.contentArray.push(content);
+    let clonedArray = JSON.parse(JSON.stringify(this.contentArray))
+    this.contentArray=clonedArray
+
     console.log('Content added successfully:', content.title);
   }
 

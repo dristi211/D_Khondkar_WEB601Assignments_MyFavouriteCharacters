@@ -1,5 +1,6 @@
 
-  <input type="text" [(ngModel)]="content.id" placeholder="id"><br>
+  <!-- <div *ngFor="let content of contentList">  -->
+    <input type="text" [(ngModel)]="content.id" placeholder="id"><br>
     <input type="text" [(ngModel)]="content.title" placeholder="Title"><br>
     <input type="text" [(ngModel)]="content.description" placeholder="Description"><br>
     <input type="text" [(ngModel)]="content.creator" placeholder="Creator"><br>
@@ -10,3 +11,4 @@
     <button (click)="submitContent()">Submit</button>
    
     <p *ngIf="errorMessage" style="color: red; font-weight: bold;">{{ errorMessage }}</p>
+  <!-- </div> -->
