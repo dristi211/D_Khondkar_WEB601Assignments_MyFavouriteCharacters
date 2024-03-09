@@ -1,0 +1,20 @@
+<p>message works!</p>
+<!-- checks message length,  displays content if above 0-->
+<!-- <div *ngIf="messageService.messages.length">
+    <!- loops over message elements and displays each message 
+    <div *ngFor="let message of messageService.messages">
+        {{ message }}
+    </div>
+</div> -->
+
+<!-- checks message length,  displays content if above 0-->
+
+<div *ngIf="messageService.messages.length">
+
+  <h2>Messages</h2>
+  <button type="button" class="clear"
+          (click)="messageService.clear()">Clear messages</button>
+          <!-- loops over message elements and displays each message -->
+  <div *ngFor='let message of messageService.messages'> {{message}} </div>
+
+</div>
