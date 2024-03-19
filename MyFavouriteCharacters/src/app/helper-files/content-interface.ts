@@ -1,6 +1,6 @@
 export  interface Content {
 
-    id: number;
+    id: number | null; //this will accepts null id values
     year: number;
     ISBN: GLfloat;
     title: string;
