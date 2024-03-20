@@ -11,7 +11,7 @@ import { ContentCardComponent } from "./content-card/content-card.component";
 import { catchError, filter, tap } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
-import { BookService } from './book.service';
+import { ContentService } from './content.service';
 import { MessageService } from './message.service';
 
 @Component({
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   customContent: Content | undefined;
 
   //injecting MovieService
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: ContentService) {}
 
   ngOnInit(): void {
     //choose ID
@@ -41,7 +41,8 @@ export class AppComponent implements OnInit {
   //fetches content by id using movieservice
   getContentById(id: number): void {
     //invokes method from MovieService, returns an Observable that outputs a movie Content based on its id 
-    this.bookService.getContentById(id)
+    //invokes method from MovieService, returns an Observable that outputs a movie Content based on its id 
+    this.bookService['getContentById'](id)
       .pipe(
         //tap - performing side-effects (updates) without modifying the value
         //sets customContent to the fetched content based on id

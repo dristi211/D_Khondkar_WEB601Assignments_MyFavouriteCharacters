@@ -7,13 +7,14 @@ import { ContentTypeFilterPipePipe } from '../content-type-filter-pipe.pipe';
 import { HoverAffectDirective } from '../hover-affect.directive'
 import { FormsModule } from '@angular/forms';
 import { catchError, of, retry } from 'rxjs';
-import { BookService } from '../book.service';
+import { ContentService } from '../content.service';
+import { ModifyContentComponentComponent } from '../modify-content/modify-content.component';
 
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, RouterOutlet, ContentTypeFilterPipePipe, HoverAffectDirective, FormsModule],
+  imports: [CommonModule, ContentCardComponent, RouterOutlet, ContentTypeFilterPipePipe,FormsModule, ModifyContentComponentComponent],
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
@@ -46,14 +47,16 @@ this.message = this.isFound ? `Content with title '${this.title}' found.` : `Con
 
 //injectable bookService of type BookService into component
 
-  constructor(private bookService:BookService){}
+  constructor(private bookService:ContentService){}
  
  //fetches the contentArray from BookService
  getBooksContent(): void{
 
  //invokes method from BookService, return an observable that outputs a bookContent[] array
  //pipe chains rxjs operator(handles the error)
- this.bookService.getContentArray().pipe(
+ //invokes method from BookService, return an observable that outputs a bookContent[] array
+   //pipe chains rxjs operator(handles the error)
+   this.bookService['getContentArray']().pipe(
   //catches any errors that occure during the HTTP request/processing of the observable
   catchError(error=> {
     console.error('Error fetching content:', error);
