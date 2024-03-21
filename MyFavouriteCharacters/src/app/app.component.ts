@@ -12,12 +12,12 @@ import { catchError, filter, tap } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
 import { BookService } from './book.service';
-import { MessageService } from './message.service';
+import { MessagesComponent } from './messages/messages.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [CommonModule, ContentListComponent, FormsModule, RouterOutlet, ContentTypeFilterPipePipe, SearchComponent, ContentCardComponent],
+    imports: [CommonModule, ContentListComponent, FormsModule, RouterOutlet, ContentTypeFilterPipePipe, SearchComponent, ContentCardComponent,MessagesComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     
