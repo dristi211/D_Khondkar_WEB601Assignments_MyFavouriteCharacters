@@ -76,7 +76,7 @@ export class ContentListComponent implements OnInit {
        })
    }
  
-   //getContent ^^ is invoked, initiating the fetching of the content from the MovieService
+   //getContent ^^ is invoked, initiating the fetching of the content from the ContentService
    ngOnInit(): void {
      this.getContent();
    
