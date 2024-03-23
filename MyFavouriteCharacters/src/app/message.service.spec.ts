@@ -14,3 +14,5 @@ describe('MessageService', () => {
     expect(service).toBeTruthy();
   });
 });
+
+export { MessageService };

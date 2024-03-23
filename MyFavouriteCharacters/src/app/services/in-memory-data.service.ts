@@ -11,7 +11,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
   createDb(){
     //setting it to the value of our array of content
-    const content = [
+    const content: Content[] = contentArray; [
       { id: 1, title: 'The Hound of the Baskervilles', year:1902, ISBN:12.4500, description:'In this, one of the most famous of Doyles mysteries, the tale of an ancient curse and a savage ghostly hound comes frighteningly to life. ' , creator: 'Arthur Conan Doyle', type:'detective fiction', imageUrl:'https://images.pexels.com/photos/1028225/pexels-photo-1028225.jpeg?auto=compress&cs=tinysrgb&w=600', tags:['Detective','Suspense','Thriller'] },
       { id: 2, title: 'His Last Bow', year:1917, ISBN: 12.45, description:'Holmes disguises himself as an informant against the British. He meets up with a German agent to provide some top-secret information, but overtakes him with chloroform. I' , creator:'Arthur Conan Doyle', type:'Thriller', imageUrl:'https://pixabay.com/images/search/suspense/', tags:['Detective','Suspense','Thriller'] },
       { id: 3, title: 'The Valley of Fear', year:1915, ISBN: 12.45, description:'The Valley of Fear is a story about a mysterious murder in Birlstone, beautiful countryside in England' , creator:'Arthur Conan Doyle', type:'Suspense', imageUrl:'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg', tags:['Detective','Suspense','Thriller'] },
@@ -26,7 +26,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
   //take the CONTENT we defined in our contentDb file previously and move the values to this service
   genId(content: Content[]): number{
-    return content.length > 0 ? Math.max(...content.map(c => c.id ?? 0)) + 1 : 1;
+    return content.length > 0 ? Math.max(...content.map(c => c.id ?? 0)) + 1 : 2000;
   }
 
   constructor() { }

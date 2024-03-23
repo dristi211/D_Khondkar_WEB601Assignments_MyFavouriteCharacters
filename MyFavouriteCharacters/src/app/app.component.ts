@@ -1,23 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Content } from './helper-files/content-interface';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentTypeFilterPipePipe } from "./content-type-filter-pipe.pipe";
-import { ClickMeComponent } from "./content-list/click-me-component";
-import { SearchComponent } from "./search/search.component";
 import { ContentCardComponent } from "./content-card/content-card.component";
 import { catchError, filter, tap } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
 import { ContentService } from './content.service';
-import { MessageService } from './message.service';
+import { MessagesComponent } from './messages/messages.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [CommonModule, ContentListComponent, FormsModule, RouterOutlet, ContentTypeFilterPipePipe, SearchComponent, ContentCardComponent],
+    imports: [RouterOutlet, ContentTypeFilterPipePipe, ContentCardComponent, CommonModule, ContentListComponent, FormsModule, MessagesComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     
