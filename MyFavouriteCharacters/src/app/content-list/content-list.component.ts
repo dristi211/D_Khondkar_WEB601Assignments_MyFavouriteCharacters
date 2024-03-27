@@ -8,6 +8,8 @@ import { catchError, of, retry } from 'rxjs';
 import { ContentService } from '../content.service';
 import { ModifyContentComponentComponent } from '../modify-content-component/modify-content.component';
 
+
+
 @Component({
   selector: 'app-content-list',
   standalone: true,

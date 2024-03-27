@@ -1,3 +1,11 @@
+<mat-form-field>
+  <input matInput placeholder="new book" #cardName />
+  </mat-form-field>
+  <button mat-raised-button color="primary"
+  (click)="clickEvent()">
+  Add Book!
+  </button>
+
 <div>
     <h2>Add New Content</h2>
     <form (ngSubmit)="addContentToList(newContent)">
