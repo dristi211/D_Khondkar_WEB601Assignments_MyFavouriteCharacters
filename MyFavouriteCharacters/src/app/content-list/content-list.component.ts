@@ -6,12 +6,13 @@ import { RouterOutlet } from '@angular/router';
 import { ContentTypeFilterPipePipe } from '../content-type-filter-pipe.pipe';
 import { catchError, of, retry } from 'rxjs';
 import { ContentService } from '../content.service';
+import { FormsModule } from '@angular/forms';
 import { ModifyContentComponentComponent } from '../modify-content-component/modify-content.component';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, RouterOutlet, ContentTypeFilterPipePipe, ModifyContentComponentComponent],
+  imports: [CommonModule, ContentCardComponent, RouterOutlet, ContentTypeFilterPipePipe,ModifyContentComponentComponent, FormsModule],
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })

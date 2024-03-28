@@ -10,8 +10,8 @@ import {MessageService} from '../message.service';
   selector: 'app-modify-content-component',
   standalone: true,
   imports: [FormsModule,],
-  templateUrl: './modify-content-component.component.html',
-  styleUrl: './modify-content-component.component.scss'
+  templateUrl: './modify-content.component.html',
+  styleUrl: './modify-content.component.scss'
 })
 export class ModifyContentComponentComponent {
   newContent: Content = {
